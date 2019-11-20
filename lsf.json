@@ -1,0 +1,52 @@
+{
+    "__default__" :
+    {
+        "queue"     : "normal",
+        "nCPUs"     : "18",
+        "memory"    : 15000,
+        "resources" : "\"select[mem>15000] rusage[mem=15000] span[hosts=1]\"",
+        "name"      : "JOBNAME.{rule}.{wildcards}",
+        "output"    : "$TEAM/temp.logs/{rule}.{wildcards}.o",
+        "error"     : "$TEAM/temp.logs/{rule}.{wildcards}.e",
+        "Group"     : "team_hemberg",
+        "tCPU"      : "99999"
+    },
+
+    "indexBAMsamtools" :
+    {
+        "nCPUs"    : 1
+    },
+
+
+    "sortBAMbyName" :
+    {
+        "nCPUs"     : 1
+    },
+
+
+    "illuminaReads2assembly" :
+    {
+      "queue"     : "long",
+      "nCPUs"     : "8",
+      "memory"    : 15000,
+      "resources" : "\"select[mem>15000] rusage[mem=15000] span[hosts=1]\"",
+      "name"      : "JOBNAME.{rule}.{wildcards}",
+      "output"    : "{rule}.{wildcards}.o",
+      "error"     : "{rule}.{wildcards}.e"
+    },
+
+
+    "pilon" :
+    {
+      "queue"     : "long",
+      "nCPUs"     : "24",
+      "memory"    : 102000,
+      "resources" : "\"select[mem>102000] rusage[mem=102000] span[hosts=1]\"",
+      "name"      : "JOBNAME.{rule}.{wildcards}",
+      "output"    : "{rule}.{wildcards}.o",
+      "error"     : "{rule}.{wildcards}.e"
+    },
+
+
+
+}
