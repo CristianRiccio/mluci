@@ -15,6 +15,13 @@ conda env export --no-builds | sed '$d' | sed '$d' > envs/conda/bamtools2_5_1.ya
 
 source deactivate
 
+# picard2_21_3
+conda create --name picard2_21_3 --channel bioconda --yes picard=2.21.3
+source activate picard2_21_3
+conda env export --no-builds | sed '$d' | sed '$d' > envs/conda/picard2_21_3.yaml
+
+source deactivate
+
 # seqtk1_3
 conda create --name seqtk1_3 --channel bioconda --yes seqtk=1.3
 source activate seqtk1_3
